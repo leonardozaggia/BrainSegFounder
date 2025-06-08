@@ -46,3 +46,28 @@ python finetune.py --checkpoint finetuned_model.pt --logdir logs/finetune/ --dat
 ## Model Downloads
 
 Pretrained models for the ATLAS dataset can be downloaded [here](https://drive.google.com/drive/folders/1fl3FeMEhv_cnIwrDa5geHPbKL-tHAuQE?usp=drive_link)
+
+## Inference
+
+You can run inference on ATLAS data using the `infer.py` script. The following
+example runs a finetuned model on a directory of test images and saves the
+predicted masks in `outputs/masks`:
+
+```bash
+python downstream/ATLAS/infer.py \
+  --checkpoint checkpoints/finetune_best_val_loss.pt \
+  --input_dir atlas_t1s \
+  --output_dir outputs/masks \
+  --patch_size 128 128 128 \
+  --overlap 0.5
+```
+
+To run inference on a single T1-weighted image without a ground-truth mask,
+specify the `--image` option instead of `--input_dir`:
+
+```bash
+python downstream/ATLAS/infer.py \
+  --checkpoint checkpoints/finetune_best_val_loss.pt \
+  --image path/to/sub-01_T1w.nii.gz \
+  --output_dir outputs/masks
+```
