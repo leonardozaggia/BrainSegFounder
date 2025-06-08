@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader
 
 # allow running this script from the repository root or from within the
 # ``downstream/ATLAS`` directory by using an absolute import path.
-from downstream.ATLAS.dataset.ATLASDataset import ATLASDataset
+from dataset.ATLASDataset import ATLASDataset
 
 
 def get_args() -> argparse.Namespace:
