@@ -161,5 +161,5 @@ if __name__ == '__main__':
 
     subprocess.call(['tar', '-xzf', 'ATLAS_R2.0.tar.gz'])
 
-    # Make compatible with PyBIDS:
-    bidsify_indi_atlas(atlas_path='ATLAS_2/', destination_path='/')
+    Make compatible with PyBIDS:
+    bidsify_indi_atlas(atlas_path='ATLAS_2/', destination_path='bids')
