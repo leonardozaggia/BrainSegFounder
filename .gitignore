@@ -166,4 +166,7 @@ logs/
 run_sys/
 *.json
 *.pt
+*.tar.gz
 .archive/
+ATLAS_2/
+bids/
